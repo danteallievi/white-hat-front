@@ -4,7 +4,7 @@ import "./CreatePostCard.scss";
 
 const CreatePostCard = ({ onClick }) => {
   return (
-    <article className="post-card">
+    <article className="create-post-card">
       <button className="button-create">
         <IconCreate
           width="80"
