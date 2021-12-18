@@ -3,6 +3,7 @@ const actionTypes = {
   LOGOUT_USER: "LOGOUT_USER",
   LOAD_USER: "LOAD_USER",
   CLEAR_USER: "CLEAR_USER",
+  LOAD_CURRENTPOST: "LOAD_CURRENTPOST",
 };
 
 export default actionTypes;
