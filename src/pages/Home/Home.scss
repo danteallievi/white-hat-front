@@ -1,0 +1,20 @@
+@import "../../styles/variables", "../../styles/fonts";
+
+.header-main {
+  position: relative;
+  top: 0;
+
+  &__title {
+    position: absolute;
+    bottom: 30px;
+    left: 30px;
+    color: $white;
+    font-size: 50px;
+  }
+}
+
+.section-posts {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 50px;
+}

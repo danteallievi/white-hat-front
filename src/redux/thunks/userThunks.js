@@ -1,5 +1,5 @@
 import axios from "axios";
-import { loadCurrentPostAction } from "../actions/postActionsCreator";
+
 import {
   loadCategoriesAction,
   loadUserAction,
@@ -24,17 +24,6 @@ export const loadUserThunk = (userId) => {
     try {
       const { data } = await axios.get(`${API_URL}user/${userId}`);
       dispatch(loadUserAction(data));
-    } catch {
-      // TODO error handling
-    }
-  };
-};
-
-export const loadCurrentPostThunk = (postId) => {
-  return async (dispatch) => {
-    try {
-      const { data } = await axios.get(`${API_URL}post/${postId}`);
-      dispatch(loadCurrentPostAction(data));
     } catch {
       // TODO error handling
     }

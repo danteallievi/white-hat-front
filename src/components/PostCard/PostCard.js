@@ -5,7 +5,7 @@ import "./PostCard.scss";
 
 const PostCard = ({ post }) => {
   return (
-    <article className="post-card">
+    <article className="post-card col-4">
       <iframe
         frameBorder={0}
         allowFullScreen
@@ -34,18 +34,13 @@ const PostCard = ({ post }) => {
       </div>
 
       <p className="post-card__description">{post.description}</p>
-      {post.categories.length ? (
-        <div className="post-card__categories-containter">
+      <div className="post-card__categories-containter">
+        {post.categories.map((category) => (
           <span className="post-card__categories">
-            {post.categories[0].name.toUpperCase()}
+            {category.name.toUpperCase()}
           </span>
-          <span className="post-card__categories">
-            {post.categories[1].name.toUpperCase()}
-          </span>
-        </div>
-      ) : (
-        ""
-      )}
+        ))}
+      </div>
     </article>
   );
 };
