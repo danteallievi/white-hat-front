@@ -1,0 +1,25 @@
+@import "../../styles/variables", "../../styles/fonts";
+
+.post-card {
+  border-radius: 20px;
+  border: 1px solid $blue;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  width: 400px;
+}
+.buttons-container {
+  display: flex;
+}
+
+.button-create {
+  background-color: transparent;
+  border: none;
+  padding: 70px;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.5;
+  }
+}
