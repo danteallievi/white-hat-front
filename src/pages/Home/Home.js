@@ -16,7 +16,7 @@ const Home = () => {
 
   return (
     <>
-      <Header />
+      <Header titleWhite="White" titleBlue="hat" />
       <div className="container">
         <section className="row section-posts">
           {posts.map((post) => (
