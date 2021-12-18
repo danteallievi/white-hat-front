@@ -34,7 +34,7 @@ const PostCard = ({ videoUrl, title, description, categories }) => {
       <div className="post-card__categories-containter">
         {categories.map((category) => (
           <span className="post-card__categories">
-            {category.name.toUpperCase()}
+            {category?.name?.toUpperCase()}
           </span>
         ))}
       </div>
