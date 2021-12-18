@@ -1,11 +1,19 @@
+import { useNavigate } from "react-router-dom";
+import paths from "../../navigation/paths";
 import { ReactComponent as IconDelete } from "../../assets/icono-delete.svg";
 import { ReactComponent as IconFavorite } from "../../assets/icono-favorite.svg";
 
 import "./PostCard.scss";
 
 const PostCard = ({ post }) => {
+  const navigate = useNavigate();
+
+  const handleCardClick = () => {
+    navigate(`${paths.postDetail}/${post.id}`);
+  };
+
   return (
-    <article className="post-card col-4">
+    <article className="post-card col-4" onClick={handleCardClick}>
       <iframe
         src={post.videoUrl}
         title={post.title}
