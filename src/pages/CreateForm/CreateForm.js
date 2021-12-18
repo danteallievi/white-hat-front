@@ -68,7 +68,9 @@ const CreateForm = () => {
           value={postData.categories}
           onChange={onChangeForm}
         >
-          <option disabled>Select a category</option>
+          <option disabled value="">
+            Select a category
+          </option>
           {categories.map(({ id, name }) => (
             <option key={id} value={id}>
               {name}
