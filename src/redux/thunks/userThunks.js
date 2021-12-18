@@ -30,21 +30,11 @@ export const loadUserThunk = (userId) => {
   };
 };
 
-export const loadCurrentPostThunk = (postId) => {
-  return async (dispatch) => {
-    try {
-      const { data } = await axios.get(`${API_URL}post/${postId}`);
-      dispatch(loadCurrentPostAction(data));
-    } catch {
-      // TODO error handling
-    }
-  };
-};
-
 export const loadCategoriesThunk = () => {
   return async (dispatch) => {
     try {
       const { data } = await axios.get(`${API_URL}category`);
+      console.log(dispatch);
       dispatch(loadCategoriesAction(data));
     } catch {
       // TODO error handling

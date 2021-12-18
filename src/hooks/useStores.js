@@ -5,9 +5,12 @@ import {
   logoutUserAction,
 } from "../redux/actions/userActionsCreator";
 import {
+  createPostThunk,
+  loadCurrentPostThunk,
+} from "../redux/thunks/postsThunks";
+import {
   loadUserThunk,
   loginUserThunk,
-  loadCurrentPostThunk,
   loadCategoriesThunk,
 } from "../redux/thunks/userThunks";
 
@@ -50,6 +53,10 @@ const useStores = () => {
     dispatch(loadCategoriesThunk());
   }, [dispatch]);
 
+  const createPost = (postData) => {
+    dispatch(createPostThunk(postData));
+  };
+
   return {
     loggedUser,
     currentUser,
@@ -61,6 +68,7 @@ const useStores = () => {
     clearUser,
     loadCurrentPost,
     loadCategories,
+    createPost,
   };
 };
 

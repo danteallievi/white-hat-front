@@ -15,10 +15,19 @@ function loggedUserReducer(loggedUser = initialState, action) {
         userData: { ...action.userData },
       };
       break;
-    case actionTypes.LOGOUT_USER: {
+    case actionTypes.LOGOUT_USER:
       newLoggedUser = initialState;
       break;
-    }
+    case actionTypes.CREATE_POST:
+      newLoggedUser = {
+        ...newLoggedUser,
+        userData: {
+          ...newLoggedUser.userData,
+          created: [...newLoggedUser.created, action.postData],
+        },
+      };
+      console.log({ newLoggedUser });
+      break;
     default:
   }
 

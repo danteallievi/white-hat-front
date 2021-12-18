@@ -6,15 +6,13 @@ import paths from "../../navigation/paths";
 
 const CreateForm = () => {
   const navigate = useNavigate();
-  const { loggedUser, categories, loadCategories } = useStores();
+  const { loggedUser, categories, loadCategories, createPost } = useStores();
   const [postData, setPostData] = useState({
     title: "",
-    category: "",
+    categories: "",
     videoUrl: "",
     description: "",
   });
-
-  console.log(postData);
 
   useEffect(() => {
     loadCategories();
@@ -22,13 +20,23 @@ const CreateForm = () => {
 
   const cancelCreation = () => {
     if (loggedUser.userData?.id) {
-      return navigate(`${paths.mySpace}${loggedUser.userData.id}`);
+      return navigate(`${paths.mySpace}/${loggedUser.userData.id}`);
     }
     return navigate(paths.home);
   };
 
-  const createPost = () => {
-    return;
+  const handleCreatePost = (event) => {
+    event.preventDefault();
+
+    if (
+      postData.title &&
+      postData.categories &&
+      postData.description &&
+      postData.videoUrl &&
+      loggedUser.userData?.id
+    ) {
+      createPost({ ...postData, creator: loggedUser.userData.id });
+    }
   };
 
   const onChangeForm = (event) => {
@@ -48,8 +56,8 @@ const CreateForm = () => {
           onChange={onChangeForm}
         />
         <select
-          name="category"
-          value={postData.category}
+          name="categories"
+          value={postData.categories}
           onChange={onChangeForm}
         >
           <option disabled selected value="">
@@ -73,7 +81,7 @@ const CreateForm = () => {
           onChange={onChangeForm}
         />
         <WhButton text="Cancelar" type="cancel" onClick={cancelCreation} />
-        <WhButton text="Crear Post" type="primary" onClick={createPost} />
+        <WhButton text="Crear Post" type="primary" onClick={handleCreatePost} />
       </form>
     </>
   );
