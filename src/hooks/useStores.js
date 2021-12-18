@@ -4,11 +4,17 @@ import {
   clearUserAction,
   logoutUserAction,
 } from "../redux/actions/userActionsCreator";
-import { loadUserThunk, loginUserThunk } from "../redux/thunks/userThunks";
+import {
+  loadUserThunk,
+  loginUserThunk,
+  loadCurrentPostThunk,
+} from "../redux/thunks/userThunks";
 
 const useStores = () => {
   const dispatch = useDispatch();
-  const { loggedUser, currentUser } = useSelector((store) => store);
+  const { loggedUser, currentUser, currentPost } = useSelector(
+    (store) => store
+  );
 
   const loginUser = useCallback(
     (userData) => {
@@ -32,13 +38,22 @@ const useStores = () => {
     dispatch(clearUserAction());
   };
 
+  const loadCurrentPost = useCallback(
+    (postId) => {
+      dispatch(loadCurrentPostThunk(postId));
+    },
+    [dispatch]
+  );
+
   return {
     loggedUser,
     currentUser,
+    currentPost,
     loginUser,
     logoutUser,
     loadUser,
     clearUser,
+    loadCurrentPost,
   };
 };
 
