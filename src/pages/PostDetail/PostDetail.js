@@ -12,22 +12,22 @@ const PostDetail = () => {
   }, [loadCurrentPost, postId]);
 
   return currentPost.title ? (
-    <article className="post-card">
+    <article className="detail-post-card">
       <iframe
         frameBorder={0}
         allowFullScreen
         src={currentPost.videoUrl}
         title={currentPost.title}
-        className="post-card__video"
+        className="detail-post-card__video"
       ></iframe>
-      <div className="post-card__info">
+      <div className="detail-post-card__info">
         {currentPost.categories.map((category) => (
-          <span className="post-card__categories">
+          <span className="detail-post-card__categories">
             {category.name.toUpperCase()}
           </span>
         ))}
-        <h2 className="post-card__title">{currentPost.title}</h2>
-        <p className="post-card__description">{currentPost.description}</p>
+        <h2 className="detail-post-card__title">{currentPost.title}</h2>
+        <p className="detail-post-card__description">{currentPost.description}</p>
       </div>
     </article>
   ) : (
