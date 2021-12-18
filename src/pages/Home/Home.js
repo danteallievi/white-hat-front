@@ -1,13 +1,19 @@
+import { useEffect } from "react";
 import Footer from "../../components/Footer/Footer";
 import Header from "../../components/Header/Header";
 import PostCard from "../../components/PostCard/PostCard";
 
-import { mockPosts } from "../../mocks/posts";
+import useStores from "../../hooks/useStores";
 
 import "./Home.scss";
 
 const Home = () => {
-  const { posts } = mockPosts;
+  const { posts, loadPosts } = useStores();
+
+  useEffect(() => {
+    loadPosts();
+  }, [loadPosts]);
+
   return (
     <>
       <Header />

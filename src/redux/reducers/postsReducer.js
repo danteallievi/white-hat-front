@@ -5,7 +5,7 @@ function postsReducer(posts = [], action) {
 
   switch (action.type) {
     case actionTypes.LOAD_POSTS:
-      newPosts = { ...action.posts };
+      newPosts = [...action.posts];
       break;
     default:
   }

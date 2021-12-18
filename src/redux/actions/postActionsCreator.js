@@ -11,6 +11,6 @@ export const createPostAction = (postData) => ({
 });
 
 export const loadPostsAction = (posts) => ({
-  type: actionTypes.CREATE_POST,
+  type: actionTypes.LOAD_POSTS,
   posts,
 });

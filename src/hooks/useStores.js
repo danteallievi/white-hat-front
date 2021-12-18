@@ -58,11 +58,14 @@ const useStores = () => {
     dispatch(createPostThunk(postData));
   };
 
-  const loadPosts = (queryObject) => {
-    const query = queryObject ? queryCreator(queryObject) : "";
+  const loadPosts = useCallback(
+    (queryObject) => {
+      const query = queryObject ? queryCreator(queryObject) : "";
 
-    dispatch(loadPostsThunk(query));
-  };
+      dispatch(loadPostsThunk(query));
+    },
+    [dispatch]
+  );
 
   return {
     loggedUser,

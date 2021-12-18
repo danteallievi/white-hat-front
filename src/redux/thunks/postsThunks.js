@@ -37,7 +37,8 @@ export const loadPostsThunk = (query) => {
   return async (dispatch) => {
     try {
       const { data } = await axios.get(`${API_URL}post${query}`);
-      dispatch(loadPostsAction(data));
+      console.log(data.data);
+      dispatch(loadPostsAction(data.data));
     } catch {
       // TODO error handling
     }
