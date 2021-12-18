@@ -1,3 +1,6 @@
+import { useNavigate } from "react-router-dom";
+import useStores from "../../hooks/useStores";
+import paths from "../../navigation/paths";
 import LoginButton from "../LoginButton/LoginButton";
 import LogoutButton from "../LogoutButton/LogoutButton";
 import WhButton from "../WhButton/WhButton";
@@ -5,11 +8,19 @@ import WhButton from "../WhButton/WhButton";
 import "./Header.styles.scss";
 
 const Header = ({ isAuthenticated }) => {
+  const navigate = useNavigate();
+  const { loggedUser } = useStores();
   const handleHomeNavigation = () => {
-    return;
+    navigate(paths.home);
   };
 
-  const handleMySpaceNavigation = () => {};
+  const handleMySpaceNavigation = () => {
+    if (loggedUser.userData?.id) {
+      navigate(`${paths.mySpace}${loggedUser.userData.id}`, {
+        userId: loggedUser.id,
+      });
+    }
+  };
 
   return (
     <header className="header">
