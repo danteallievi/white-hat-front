@@ -28,7 +28,6 @@ function App() {
     }
   }, [loginUser, user, isAuthenticated]);
 
-  console.log(loggedUser);
   return (
     <div>
       <Header isAuthenticated={isAuthenticated} />
