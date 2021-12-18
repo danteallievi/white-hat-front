@@ -1,6 +1,6 @@
-@import "./styles/variables", "./styles/reset";
-
+@import "./styles/reset", "./styles/variables", "./styles/fonts";
 
 body {
   background-color: $darkGray;
+  font-family: $main-font-family;
 }

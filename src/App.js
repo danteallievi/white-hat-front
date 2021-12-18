@@ -1,10 +1,18 @@
 import Header from "./components/Header/Header";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-
-import "./App.scss";
+import { Routes, Route } from "react-router-dom";
 import { useEffect } from "react";
 import { useAuth0 } from "@auth0/auth0-react";
+
+import Home from "./pages/Home/Home";
+import NotFound from "./pages/NotFound/NotFound";
+import MySpace from "./pages/MySpace/MySpace";
+import PostDetail from "./pages/PostDetail/PostDetail";
+import CreateForm from "./pages/CreateForm/CreateForm";
 import useStores from "./hooks/useStores";
+
+import paths from "./navigation/paths";
+
+import "./App.scss";
 
 function App() {
   const { isAuthenticated, user } = useAuth0();
@@ -21,16 +29,19 @@ function App() {
   }, [loginUser, user, isAuthenticated]);
 
   console.log(loggedUser);
-
   return (
-    <>
+    <div>
       <Header isAuthenticated={isAuthenticated} />
-      <Router>
+      <main>
         <Routes>
-          <Route path="/" element={<h1>Hi</h1>} />
+          <Route path={paths.home} element={<Home />} />
+          <Route path={`${paths.mySpace}:userId`} element={<MySpace />} />
+          <Route path={`${paths.postDetail}:postId`} element={<PostDetail />} />
+          <Route path={paths.createForm} element={<CreateForm />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
-      </Router>
-    </>
+      </main>
+    </div>
   );
 }
 
