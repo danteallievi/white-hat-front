@@ -1,4 +1,6 @@
 import { mockPosts } from "../../mocks/posts";
+import { ReactComponent as IconDelete } from "../../assets/icono-delete.svg";
+import { ReactComponent as IconFavorite } from "../../assets/icono-favorite.svg";
 
 const PostCard = () => {
   const { posts } = mockPosts;
@@ -20,6 +22,12 @@ const PostCard = () => {
       ) : (
         ""
       )}
+      <button>
+        <IconDelete width="30" height="30" />
+      </button>
+      <button>
+        <IconFavorite width="30" height="30" />
+      </button>
     </article>
   );
 };
