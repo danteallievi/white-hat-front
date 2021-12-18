@@ -18,6 +18,7 @@ const MySpace = () => {
       loadUser(userId);
     }
   }, [userId, loadUser]);
+
   return favourite ? (
     <>
       <div>
@@ -34,7 +35,7 @@ const MySpace = () => {
         <div>
           {currentUser.favourites &&
             currentUser.favourites.map((post) => (
-              <PostCard {...post} key={post.id} />
+              <PostCard post={post} key={post.id} />
             ))}
         </div>
       </div>
@@ -56,7 +57,7 @@ const MySpace = () => {
           <CreatePostCard onClick={() => navigate(paths.createForm)} />
           {currentUser.created &&
             currentUser.created.map((post) => (
-              <PostCard {...post} key={post.id} />
+              <PostCard post={post} key={post.id} />
             ))}
         </div>
       </div>

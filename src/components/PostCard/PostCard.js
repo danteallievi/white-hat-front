@@ -3,16 +3,16 @@ import { ReactComponent as IconFavorite } from "../../assets/icono-favorite.svg"
 
 import "./PostCard.scss";
 
-const PostCard = ({ videoUrl, title, description, categories }) => {
+const PostCard = ({ post }) => {
   return (
     <article className="post-card col-4">
       <iframe
-        src={videoUrl}
-        title={title}
+        src={post.videoUrl}
+        title={post.title}
         className="post-card__video"
       ></iframe>
       <div className="post-card__title-container">
-        <h2 className="post-card__title">{title}</h2>
+        <h2 className="post-card__title">{post.title}</h2>
         <div className="buttons-container">
           <button className="button-delete">
             <IconDelete
@@ -30,10 +30,10 @@ const PostCard = ({ videoUrl, title, description, categories }) => {
           </button>
         </div>
       </div>
-      <p className="post-card__description">{description}</p>
+      <p className="post-card__description">{post.description}</p>
       <div className="post-card__categories-containter">
-        {categories.map((category) => (
-          <span className="post-card__categories">
+        {post.categories.map((category, index) => (
+          <span key={`${post.id}-${index}`} className="post-card__categories">
             {category?.name?.toUpperCase()}
           </span>
         ))}

@@ -16,7 +16,7 @@ const Nav = ({ isAuthenticated }) => {
 
   const handleMySpaceNavigation = () => {
     if (loggedUser.userData?.id) {
-      navigate(`${paths.mySpace}${loggedUser.userData.id}`, {
+      navigate(`${paths.mySpace}/${loggedUser.userData.id}`, {
         userId: loggedUser.id,
       });
     }
