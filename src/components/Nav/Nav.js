@@ -23,7 +23,7 @@ const Nav = ({ isAuthenticated }) => {
   };
 
   return (
-    <header className="nav">
+    <nav className="nav">
       <h1 className="web-title">
         White <span className="web-title web-title--secondary">Hat</span>
       </h1>
@@ -38,7 +38,7 @@ const Nav = ({ isAuthenticated }) => {
           <LoginButton />
         )}
       </div>
-    </header>
+    </nav>
   );
 };
 
