@@ -1,0 +1,63 @@
+@import "../../styles/variables", "../../styles/fonts";
+
+.post-card {
+  border-radius: 20px;
+  border: 1px solid $blue;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  width: 400px;
+
+  &__video {
+    height: 200px;
+    background-color: red;
+  }
+
+  &__title-container {
+    display: flex;
+    padding: 10px 0 10px;
+  }
+
+  &__title {
+    color: $blue;
+    font-size: $size-h2;
+  }
+
+  &__description {
+    color: $white;
+    font-size: $size-medium;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+  }
+
+  &__categories-containter {
+    display: flex;
+    font-size: $size-medium;
+    opacity: 0.6;
+  }
+
+  &__categories {
+    color: $white;
+    border-radius: 10px;
+    border: 1px solid $blue;
+    padding: 5px;
+    margin: 10px 5px 0 0;
+  }
+}
+
+.buttons-container {
+  display: flex;
+}
+
+.button-delete,
+.button-favourite {
+  background-color: transparent;
+  border: none;
+  width: 40px;
+
+  &:hover {
+    opacity: 0.5;
+  }
+}
