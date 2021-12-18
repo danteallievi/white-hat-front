@@ -1,6 +1,6 @@
 import { mockPosts } from "../../mocks/posts";
 
-export const PostCard = () => {
+const PostCard = () => {
   const { posts } = mockPosts;
   return (
     <article>
@@ -23,3 +23,5 @@ export const PostCard = () => {
     </article>
   );
 };
+
+export default PostCard;

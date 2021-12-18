@@ -1,5 +1,5 @@
-@import "./styles/reset";
+@import "./styles/variables", "./styles/reset";
 
 body {
-  background-color: black;
+  background-color: $darkGray;
 }
