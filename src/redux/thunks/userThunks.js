@@ -1,6 +1,10 @@
 import axios from "axios";
-import { loadUserAction, loginUserAction } from "../actions/userActionsCreator";
 import { loadCurrentPostAction } from "../actions/postActionsCreator";
+import {
+  loadCategoriesAction,
+  loadUserAction,
+  loginUserAction,
+} from "../actions/userActionsCreator";
 
 const API_URL = process.env.REACT_APP_API_URL;
 
@@ -26,15 +30,22 @@ export const loadUserThunk = (userId) => {
   };
 };
 
-/* ---- *********** ---- */
-/* ---- Post thunks ---- */
-/* ---- *********** ---- */
-
 export const loadCurrentPostThunk = (postId) => {
   return async (dispatch) => {
     try {
       const { data } = await axios.get(`${API_URL}post/${postId}`);
       dispatch(loadCurrentPostAction(data));
+    } catch {
+      // TODO error handling
+    }
+  };
+};
+
+export const loadCategoriesThunk = () => {
+  return async (dispatch) => {
+    try {
+      const { data } = await axios.get(`${API_URL}category`);
+      dispatch(loadCategoriesAction(data));
     } catch {
       // TODO error handling
     }

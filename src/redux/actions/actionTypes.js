@@ -4,6 +4,7 @@ const actionTypes = {
   LOAD_USER: "LOAD_USER",
   CLEAR_USER: "CLEAR_USER",
   LOAD_CURRENTPOST: "LOAD_CURRENTPOST",
+  LOAD_CATEGORIES: "LOAD_CATEGORIES",
 };
 
 export default actionTypes;

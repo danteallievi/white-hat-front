@@ -8,11 +8,12 @@ import {
   loadUserThunk,
   loginUserThunk,
   loadCurrentPostThunk,
+  loadCategoriesThunk,
 } from "../redux/thunks/userThunks";
 
 const useStores = () => {
   const dispatch = useDispatch();
-  const { loggedUser, currentUser, currentPost } = useSelector(
+  const { loggedUser, currentUser, categories, currentPost } = useSelector(
     (store) => store
   );
 
@@ -45,15 +46,21 @@ const useStores = () => {
     [dispatch]
   );
 
+  const loadCategories = useCallback(() => {
+    dispatch(loadCategoriesThunk());
+  }, [dispatch]);
+
   return {
     loggedUser,
     currentUser,
     currentPost,
+    categories,
     loginUser,
     logoutUser,
     loadUser,
     clearUser,
     loadCurrentPost,
+    loadCategories,
   };
 };
 
