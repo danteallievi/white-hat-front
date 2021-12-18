@@ -7,18 +7,19 @@ import {
 import {
   createPostThunk,
   loadCurrentPostThunk,
+  loadPostsThunk,
 } from "../redux/thunks/postsThunks";
 import {
   loadUserThunk,
   loginUserThunk,
   loadCategoriesThunk,
 } from "../redux/thunks/userThunks";
+import queryCreator from "../utils/queryCreator";
 
 const useStores = () => {
   const dispatch = useDispatch();
-  const { loggedUser, currentUser, categories, currentPost } = useSelector(
-    (store) => store
-  );
+  const { loggedUser, currentUser, categories, currentPost, posts } =
+    useSelector((store) => store);
 
   const loginUser = useCallback(
     (userData) => {
@@ -57,11 +58,21 @@ const useStores = () => {
     dispatch(createPostThunk(postData));
   };
 
+  const loadPosts = useCallback(
+    (queryObject) => {
+      const query = queryObject ? queryCreator(queryObject) : "";
+
+      dispatch(loadPostsThunk(query));
+    },
+    [dispatch]
+  );
+
   return {
     loggedUser,
     currentUser,
     currentPost,
     categories,
+    posts,
     loginUser,
     logoutUser,
     loadUser,
@@ -69,6 +80,7 @@ const useStores = () => {
     loadCurrentPost,
     loadCategories,
     createPost,
+    loadPosts,
   };
 };
 

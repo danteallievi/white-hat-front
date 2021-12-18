@@ -32,18 +32,13 @@ const PostCard = ({ post }) => {
       </div>
 
       <p className="post-card__description">{post.description}</p>
-      {post.categories.length ? (
-        <div className="post-card__categories-containter">
+      <div className="post-card__categories-containter">
+        {post.categories.map((category) => (
           <span className="post-card__categories">
-            {post.categories[0].toUpperCase()}
+            {category.name.toUpperCase()}
           </span>
-          <span className="post-card__categories">
-            {post.categories[1].toUpperCase()}
-          </span>
-        </div>
-      ) : (
-        ""
-      )}
+        ))}
+      </div>
     </article>
   );
 };
