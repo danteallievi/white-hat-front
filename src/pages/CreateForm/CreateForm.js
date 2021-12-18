@@ -25,7 +25,7 @@ const CreateForm = () => {
     return navigate(paths.home);
   };
 
-  const handleCreatePost = (event) => {
+  const handleCreatePost = async (event) => {
     event.preventDefault();
 
     if (
@@ -35,7 +35,15 @@ const CreateForm = () => {
       postData.videoUrl &&
       loggedUser.userData?.id
     ) {
-      createPost({ ...postData, creator: loggedUser.userData.id });
+      const result = await createPost({
+        ...postData,
+        creator: loggedUser.userData.id,
+      });
+
+      if (result) {
+        return cancelCreation();
+      }
+      //TODO error handling
     }
   };
 
@@ -60,9 +68,7 @@ const CreateForm = () => {
           value={postData.categories}
           onChange={onChangeForm}
         >
-          <option disabled selected value="">
-            Select a category
-          </option>
+          <option disabled>Select a category</option>
           {categories.map(({ id, name }) => (
             <option key={id} value={id}>
               {name}

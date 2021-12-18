@@ -5,7 +5,6 @@ import {
   logoutUserAction,
 } from "../redux/actions/userActionsCreator";
 import {
-  createPostThunk,
   loadCurrentPostThunk,
   loadPostsThunk,
 } from "../redux/thunks/postsThunks";
@@ -14,6 +13,7 @@ import {
   loginUserThunk,
   loadCategoriesThunk,
 } from "../redux/thunks/userThunks";
+import { createPostApi } from "../services/api";
 import queryCreator from "../utils/queryCreator";
 
 const useStores = () => {
@@ -54,8 +54,9 @@ const useStores = () => {
     dispatch(loadCategoriesThunk());
   }, [dispatch]);
 
-  const createPost = (postData) => {
-    dispatch(createPostThunk(postData));
+  const createPost = async (postData) => {
+    const result = await createPostApi(postData);
+    return result;
   };
 
   const loadPosts = useCallback(
