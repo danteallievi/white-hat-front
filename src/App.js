@@ -16,7 +16,7 @@ import "./App.scss";
 
 function App() {
   const { isAuthenticated, user } = useAuth0();
-  const { loginUser, loggedUser } = useStores();
+  const { loginUser } = useStores();
 
   useEffect(() => {
     if (isAuthenticated) {
