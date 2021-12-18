@@ -24,7 +24,7 @@ const Nav = ({ isAuthenticated }) => {
 
   return (
     <nav className="nav">
-      <h1 className="web-title">
+      <h1 className="web-title" onClick={() => navigate(paths.home)}>
         White <span className="web-title web-title--secondary">Hat</span>
       </h1>
       <div className="header__button-container">
