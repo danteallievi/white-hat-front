@@ -1,12 +1,18 @@
-@import "../../styles/variables", "../../styles/fonts";
+@import "../../styles/variables", "../../styles/fonts", "../../styles/metrics";
 
 .button {
   background-color: transparent;
   border: 1px solid $white;
   border-radius: 20px;
   color: $white;
-  padding: 10px;
+  padding: $space-medium;
   font-size: $size-medium;
+  margin: 0 $space-small;
+  transition: 0.2s;
+
+  &:hover {
+    background-color: $white50;
+  }
 }
 
 .primary {
