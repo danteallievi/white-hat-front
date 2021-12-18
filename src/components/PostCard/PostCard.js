@@ -7,6 +7,8 @@ const PostCard = ({ post }) => {
   return (
     <article className="post-card col-4">
       <iframe
+        frameBorder={0}
+        allowFullScreen
         src={post.videoUrl}
         title={post.title}
         className="post-card__video"
