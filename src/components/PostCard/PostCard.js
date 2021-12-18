@@ -12,6 +12,14 @@ export const PostCard = () => {
       ></iframe>
       <h2>{posts[0].title}</h2>
       <p>{posts[0].description}</p>
+      {posts[0].categories.length ? (
+        <>
+          <span>{posts[0].categories[0]}</span>
+          <span>{posts[0].categories[1]}</span>
+        </>
+      ) : (
+        ""
+      )}
     </article>
   );
 };
