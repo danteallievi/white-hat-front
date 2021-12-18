@@ -5,7 +5,7 @@ import "./PostCard.scss";
 
 const PostCard = ({ post }) => {
   return (
-    <article className="post-card">
+    <article className="post-card col-4">
       <iframe
         src={post.videoUrl}
         title={post.title}

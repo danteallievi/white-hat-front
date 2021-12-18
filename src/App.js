@@ -1,4 +1,4 @@
-import Header from "./components/Header/Header";
+import Nav from "./components/Nav/Nav";
 import { Routes, Route } from "react-router-dom";
 import { useEffect } from "react";
 import { useAuth0 } from "@auth0/auth0-react";
@@ -30,7 +30,7 @@ function App() {
 
   return (
     <div>
-      <Header isAuthenticated={isAuthenticated} />
+      <Nav isAuthenticated={isAuthenticated} />
       <main>
         <Routes>
           <Route path={paths.home} element={<Home />} />
