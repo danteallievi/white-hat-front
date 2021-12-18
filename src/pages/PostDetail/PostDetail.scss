@@ -17,6 +17,19 @@
       min-height: 70vh;
     }
   }
+  &__categories-containter {
+    display: flex;
+    font-size: $size-medium;
+    opacity: 0.6;
+  }
+
+  &__categories {
+    color: $white;
+    border-radius: 10px;
+    border: 1px solid $blue;
+    padding: 5px;
+    margin: 10px 5px 0 0;
+  }
 
   &__info {
     margin-top: 1rem;

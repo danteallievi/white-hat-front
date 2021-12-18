@@ -21,13 +21,17 @@ const PostDetail = () => {
         className="detail-post-card__video"
       ></iframe>
       <div className="detail-post-card__info">
-        {currentPost.categories.map((category) => (
-          <span className="detail-post-card__categories">
-            {category.name.toUpperCase()}
-          </span>
-        ))}
+        <div className="post-card__categories-containter">
+          {currentPost.categories.map((category) => (
+            <span className="post-card__categories">
+              {category.name.toUpperCase()}
+            </span>
+          ))}
+        </div>
         <h2 className="detail-post-card__title">{currentPost.title}</h2>
-        <p className="detail-post-card__description">{currentPost.description}</p>
+        <p className="detail-post-card__description">
+          {currentPost.description}
+        </p>
       </div>
     </article>
   ) : (
