@@ -23,7 +23,7 @@ export const mockPosts = {
       favorites: ["1", "4", "5"],
     },
     {
-      id: "2",
+      id: "9git",
       videoUrl: "https://www.youtube.com/embed/Hj_rA0dhr2I",
       title: "Web App Vulnerabilities - DevSecOps Course for Beginners",
       description:
