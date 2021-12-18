@@ -1,0 +1,24 @@
+@import "../../styles/variables", "../../styles/fonts";
+
+.form-create-post {
+  justify-content: space-between;
+
+  &__input-title,
+  &__input-categories,
+  &__input-url,
+  &__input-description {
+    color: $ligthGray;
+    background-color: transparent;
+    border: 1px solid $blue;
+    border-radius: 10px;
+    padding: 8px;
+    margin: 5px;
+  }
+
+  &__buttons {
+    display: flex;
+    justify-content: flex-end;
+    padding: 0;
+    margin-top: 10px;
+  }
+}
