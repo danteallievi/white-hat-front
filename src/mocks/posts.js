@@ -22,5 +22,16 @@ export const mockPosts = {
       poster: "3",
       favorites: ["1", "4", "5"],
     },
+    {
+      id: "2",
+      videoUrl: "https://www.youtube.com/embed/Hj_rA0dhr2I",
+      title: "Web App Vulnerabilities - DevSecOps Course for Beginners",
+      description:
+        "In this DevSecOps course, you will learn how to take advantage of common web vulnerabilities, how to fix those vulnerabilities, and how to use DevSecOps tools to make sure your applications (and containers) are secure. You will also learn all about DevSecOps.",
+      categories: ["FrontEnd", "BackEnd"],
+      creationDate: "Sat Dec 18 2021 11:07:37 GMT+0100",
+      poster: "3",
+      favorites: ["1", "4", "5"],
+    },
   ],
 };
