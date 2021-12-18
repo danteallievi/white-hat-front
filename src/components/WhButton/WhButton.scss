@@ -1,0 +1,22 @@
+@import "../../styles/variables", "../../styles/fonts";
+
+.button {
+  background-color: transparent;
+  border: 1px solid $white;
+  border-radius: 20px;
+  color: $white;
+  padding: 10px;
+  font-size: $size-medium;
+}
+
+.primary {
+  color: $blue;
+  border-color: $blue;
+  font-size: $size-big;
+}
+
+.cancel {
+  color: $secondary;
+  border-color: $secondary;
+  font-size: $size-big;
+}
