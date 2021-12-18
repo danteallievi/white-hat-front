@@ -1,0 +1,50 @@
+@import "../../styles/variables", "../../styles/fonts";
+
+.detail-post-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 40px;
+  width: 100%;
+
+  &__video {
+    width: 100%;
+    min-height: 50vh;
+    height: 50vh;
+    object-fit: cover;
+
+    @media (min-width: 1024px) {
+      min-height: 70vh;
+    }
+  }
+  &__categories-containter {
+    display: flex;
+    font-size: $size-medium;
+    opacity: 0.6;
+  }
+
+  &__categories {
+    color: $white;
+    border-radius: 10px;
+    border: 1px solid $blue;
+    padding: 5px;
+    margin: 10px 5px 0 0;
+  }
+
+  &__info {
+    margin-top: 1rem;
+    width: 100%;
+  }
+
+  &__title {
+    color: $blue;
+    margin-bottom: 1rem;
+    font-size: $size-header-detail;
+  }
+
+  &__description {
+    font-size: $size-medium;
+    line-height: 1.5;
+    color: white;
+  }
+}

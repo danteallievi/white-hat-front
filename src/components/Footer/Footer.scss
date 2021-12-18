@@ -1,0 +1,13 @@
+@import "../../styles/variables", "../../styles/fonts";
+
+.footer-main {
+  border-top: 1px solid $blue;
+  margin-top: 30px;
+  padding: 10px;
+
+  &__text {
+    color: $white;
+    text-align: center;
+    margin: 0;
+  }
+}
