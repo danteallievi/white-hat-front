@@ -5,6 +5,7 @@ const actionTypes = {
   CLEAR_USER: "CLEAR_USER",
   LOAD_CURRENTPOST: "LOAD_CURRENTPOST",
   LOAD_CATEGORIES: "LOAD_CATEGORIES",
+  CREATE_POST: "CREATE_POST",
 };
 
 export default actionTypes;
