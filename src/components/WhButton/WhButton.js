@@ -1,4 +1,4 @@
-import "./WhButton.scss";
+import "./WhButton.styles.scss";
 
 const WhButton = (props) => {
   const { type, text, ...rest } = props;
