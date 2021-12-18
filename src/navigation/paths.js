@@ -1,8 +1,8 @@
 const paths = {
   home: "/",
-  postDetail: "/post",
+  postDetail: "/post/detail",
   createForm: "/post/create",
-  mySpace: "/user/",
+  mySpace: "/user",
 };
 
 export default paths;

@@ -1,5 +1,10 @@
 import axios from "axios";
-import { loadUserAction, loginUserAction } from "../actions/userActionsCreator";
+import { loadCurrentPostAction } from "../actions/postActionsCreator";
+import {
+  loadCategoriesAction,
+  loadUserAction,
+  loginUserAction,
+} from "../actions/userActionsCreator";
 
 const API_URL = process.env.REACT_APP_API_URL;
 
@@ -19,6 +24,18 @@ export const loadUserThunk = (userId) => {
     try {
       const { data } = await axios.get(`${API_URL}user/${userId}`);
       dispatch(loadUserAction(data));
+    } catch {
+      // TODO error handling
+    }
+  };
+};
+
+export const loadCategoriesThunk = () => {
+  return async (dispatch) => {
+    try {
+      const { data } = await axios.get(`${API_URL}category`);
+      console.log(dispatch);
+      dispatch(loadCategoriesAction(data));
     } catch {
       // TODO error handling
     }

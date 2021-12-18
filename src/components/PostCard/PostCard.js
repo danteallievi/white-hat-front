@@ -1,20 +1,18 @@
-import { mockPosts } from "../../mocks/posts";
 import { ReactComponent as IconDelete } from "../../assets/icono-delete.svg";
 import { ReactComponent as IconFavorite } from "../../assets/icono-favorite.svg";
 
 import "./PostCard.scss";
 
-const PostCard = () => {
-  const { posts } = mockPosts;
+const PostCard = ({ post }) => {
   return (
     <article className="post-card col-4">
       <iframe
-        src={posts[0].videoUrl}
-        title={posts[0].title}
+        src={post.videoUrl}
+        title={post.title}
         className="post-card__video"
       ></iframe>
       <div className="post-card__title-container">
-        <h2 className="post-card__title">{posts[0].title}</h2>
+        <h2 className="post-card__title">{post.title}</h2>
         <div className="buttons-container">
           <button className="button-delete">
             <IconDelete
@@ -33,14 +31,14 @@ const PostCard = () => {
         </div>
       </div>
 
-      <p className="post-card__description">{posts[0].description}</p>
-      {posts[0].categories.length ? (
+      <p className="post-card__description">{post.description}</p>
+      {post.categories.length ? (
         <div className="post-card__categories-containter">
           <span className="post-card__categories">
-            {posts[0].categories[0].toUpperCase()}
+            {post.categories[0].toUpperCase()}
           </span>
           <span className="post-card__categories">
-            {posts[0].categories[1].toUpperCase()}
+            {post.categories[1].toUpperCase()}
           </span>
         </div>
       ) : (
