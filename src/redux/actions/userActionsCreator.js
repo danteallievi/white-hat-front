@@ -17,3 +17,8 @@ export const loadUserAction = (userData) => ({
 export const clearUserAction = () => ({
   type: actionTypes.CLEAR_USER,
 });
+
+export const loadCategoriesAction = (categories) => ({
+  type: actionTypes.LOAD_CATEGORIES,
+  categories,
+});
