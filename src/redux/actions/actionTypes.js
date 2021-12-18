@@ -6,6 +6,7 @@ const actionTypes = {
   LOAD_CURRENTPOST: "LOAD_CURRENTPOST",
   LOAD_CATEGORIES: "LOAD_CATEGORIES",
   LOAD_POSTS: "LOAD_POSTS",
+  DELETE_POST: "DELETE_POST",
 };
 
 export default actionTypes;
