@@ -7,6 +7,8 @@ const PostCard = ({ post }) => {
   return (
     <article className="post-card">
       <iframe
+        frameBorder={0}
+        allowFullScreen
         src={post.videoUrl}
         title={post.title}
         className="post-card__video"
@@ -35,10 +37,10 @@ const PostCard = ({ post }) => {
       {post.categories.length ? (
         <div className="post-card__categories-containter">
           <span className="post-card__categories">
-            {post.categories[0].toUpperCase()}
+            {post.categories[0].name.toUpperCase()}
           </span>
           <span className="post-card__categories">
-            {post.categories[1].toUpperCase()}
+            {post.categories[1].name.toUpperCase()}
           </span>
         </div>
       ) : (
