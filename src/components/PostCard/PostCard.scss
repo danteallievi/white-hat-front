@@ -45,6 +45,18 @@
     padding: 5px;
     margin: 10px 5px 0 0;
   }
+
+  &__verMas {
+    margin-top: 1rem;
+    color: $blue;
+    width: fit-content;
+    cursor: pointer;
+
+    &:hover {
+      color: $white;
+      text-decoration: underline;
+    }
+  }
 }
 
 .buttons-container {

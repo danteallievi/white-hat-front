@@ -7,6 +7,11 @@ function postsReducer(posts = [], action) {
     case actionTypes.LOAD_POSTS:
       newPosts = [...action.posts];
       break;
+
+    case actionTypes.DELETE_POST:
+      newPosts = posts.filter((post) => post.id !== action.postId);
+      break;
+
     default:
   }
 

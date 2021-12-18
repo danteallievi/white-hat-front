@@ -4,16 +4,22 @@ import { ReactComponent as IconDelete } from "../../assets/icono-delete.svg";
 import { ReactComponent as IconFavorite } from "../../assets/icono-favorite.svg";
 
 import "./PostCard.scss";
+import useStores from "../../hooks/useStores";
 
 const PostCard = ({ post }) => {
+  const { deletePost } = useStores();
   const navigate = useNavigate();
 
-  const handleCardClick = () => {
+  const handleCardClick = (e) => {
     navigate(`${paths.postDetail}/${post.id}`);
   };
 
+  const handleDeleteClick = (id) => {
+    deletePost(id);
+  };
+
   return (
-    <article className="post-card col-4" onClick={handleCardClick}>
+    <article className="post-card col-4">
       <iframe
         src={post.videoUrl}
         title={post.title}
@@ -22,7 +28,10 @@ const PostCard = ({ post }) => {
       <div className="post-card__title-container">
         <h2 className="post-card__title">{post.title}</h2>
         <div className="buttons-container">
-          <button className="button-delete">
+          <button
+            className="button-delete"
+            onClick={() => handleDeleteClick(post.id)}
+          >
             <IconDelete
               width="30"
               height="30"
@@ -46,6 +55,9 @@ const PostCard = ({ post }) => {
           </span>
         ))}
       </div>
+      <p onClick={handleCardClick} className="post-card__verMas">
+        Ver más
+      </p>
     </article>
   );
 };

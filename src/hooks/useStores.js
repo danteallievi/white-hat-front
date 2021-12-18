@@ -7,6 +7,7 @@ import {
 import {
   loadCurrentPostThunk,
   loadPostsThunk,
+  deletePostThunk,
 } from "../redux/thunks/postsThunks";
 import {
   loadUserThunk,
@@ -59,6 +60,10 @@ const useStores = () => {
     return result;
   };
 
+  const deletePost = (postId) => {
+    dispatch(deletePostThunk(postId));
+  };
+
   const loadPosts = useCallback(
     (queryObject) => {
       const query = queryObject ? queryCreator(queryObject) : "";
@@ -82,6 +87,7 @@ const useStores = () => {
     loadCategories,
     createPost,
     loadPosts,
+    deletePost,
   };
 };
 
