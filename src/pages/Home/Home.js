@@ -1,5 +1,5 @@
-import { ReactComponent as ImageAmbient } from "../../assets/image_ambient.svg";
 import Footer from "../../components/Footer/Footer";
+import Header from "../../components/Header/Header";
 import PostCard from "../../components/PostCard/PostCard";
 
 import { mockPosts } from "../../mocks/posts";
@@ -10,10 +10,7 @@ const Home = () => {
   const { posts } = mockPosts;
   return (
     <>
-      <header className="header-main">
-        <ImageAmbient className="header-main__image" />
-        <h1 className="header-main__title">Home</h1>
-      </header>
+      <Header />
       <div className="container">
         <section className="row section-posts">
           {posts.map((post) => (

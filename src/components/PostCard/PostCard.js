@@ -7,7 +7,7 @@ import "./PostCard.scss";
 const PostCard = () => {
   const { posts } = mockPosts;
   return (
-    <article className="post-card">
+    <article className="post-card col-4">
       <iframe
         src={posts[0].videoUrl}
         title={posts[0].title}
