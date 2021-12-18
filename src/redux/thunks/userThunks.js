@@ -1,5 +1,5 @@
 import axios from "axios";
-import { loadCurrentPostAction } from "../actions/postActionsCreator";
+
 import {
   loadCategoriesAction,
   loadUserAction,
