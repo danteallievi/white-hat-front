@@ -16,7 +16,7 @@ import "./App.scss";
 
 function App() {
   const { isAuthenticated, user } = useAuth0();
-  const { loginUser, loggedUser } = useStores();
+  const { loginUser } = useStores();
 
   useEffect(() => {
     if (isAuthenticated) {
@@ -34,9 +34,14 @@ function App() {
       <main>
         <Routes>
           <Route path={paths.home} element={<Home />} />
-          <Route path={`${paths.mySpace}:userId`} element={<MySpace />} />
-          <Route path={`${paths.postDetail}:postId`} element={<PostDetail />} />
-          <Route path={paths.createForm} element={<CreateForm />} />
+          <Route path={`${paths.mySpace}/:userId`} element={<MySpace />} />
+          <Route
+            path={`${paths.postDetail}/:postId`}
+            element={<PostDetail />}
+          />
+          {isAuthenticated && (
+            <Route path={paths.createForm} element={<CreateForm />} />
+          )}
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
